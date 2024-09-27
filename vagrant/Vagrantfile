@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   # https://docs.vagrantup.com.
 
   # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://app.vagrantup.com/search.
+  # boxes at https://portal.cloud.hashicorp.com/vagrant/discover
   config.vm.box = "debian/bookworm64"
   config.vm.hostname = "pxeboot"
 
