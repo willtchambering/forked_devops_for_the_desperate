@@ -10,3 +10,4 @@ vagrant/bpf-perf-workshop/
 vagrant/perf-labs/
 telnet-server/main
 *.tool-versions
+software/debian-12.7.0-amd64-netinst.iso
