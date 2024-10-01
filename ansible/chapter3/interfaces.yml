@@ -2,21 +2,24 @@
   blockinfile:
     path: "/etc/network/interfaces"
     block: |
-      # static settings: wlp5s0
-      iface wlp5s0 inet dhcp
 
-      # inet6 via DHCP
-      iface wlp5s0 inet6 dhcp
+      # static settings: enp2s0 / enp0s8
+      auto eth1
+      allow-hotplug eth1
 
-      # static settings enp2s0
-      iface enp2s0 inet static
-      # IP address
-      address 10.8.4.2
-      # network address
-      network 10.8.4.0
-      # subnet mask
-      netmask 255.255.255.0
-      # broadcast address
-      broadcast 10.8.4.255
+      iface eth1 inet static
+       address 10.8.4.2
+       network 10.8.4.0
+       netmask 255.255.255.0
+       broadcast 10.8.4.255
+
+      # dynamic settings: wlp5s0 / enp0s9
+      auto eth2
+      allow-hotplug eth2
+
+      iface eth2 inet dhcp
+
+      iface eth2 inet6 auto
+
     state: present
   notify: "Restart Network Services"
