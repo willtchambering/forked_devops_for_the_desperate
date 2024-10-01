@@ -1,0 +1,5 @@
+- name: Install DNSMasq and apt-cacher-ng
+  ansible.builtin.apt:
+    pkg:
+      - dnsmasq
+      - apt-cacher-ng
