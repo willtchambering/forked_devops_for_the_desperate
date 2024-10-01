@@ -2,8 +2,8 @@
   blockinfile:
     path: "/etc/network/interfaces"
     block: |
-      # static settings: enp2s0
-      iface enp2s0 inet static
+      # static settings: wlp5s0
+      iface wlp5s0 inet static
       # IP address
       address 192.168.4.88
       # network address
@@ -18,6 +18,17 @@
       dns-nameservers 192.168.4.1
 
       # inet6 via DHCP
-      iface enp2s0 inet dhcp
+      iface wlp5s0 inet6 dhcp
+
+      # static settings enp2s0
+      iface enp2s0 inet static
+      # IP address
+      address 10.8.4.2
+      # network address
+      network 10.8.4.0
+      # subnet mask
+      netmask 255.255.255.0
+      # broadcast address
+      broadcast 10.8.4.255
     state: present
   notify: "Restart Network Services"
