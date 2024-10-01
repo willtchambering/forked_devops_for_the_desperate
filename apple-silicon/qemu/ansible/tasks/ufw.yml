@@ -1,3 +1,0 @@
----
-- name: Install ufw
-  apt: update_cache=yes name=ufw state=latest

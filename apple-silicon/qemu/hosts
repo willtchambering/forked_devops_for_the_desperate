@@ -1,2 +1,0 @@
-[all]
-127.0.0.1 ansible_port=10022 ansible_remote_user=dftd
