@@ -2,7 +2,6 @@
   blockinfile:
     path: "/etc/network/interfaces"
     block: |
-
       # static settings: enp2s0 / enp0s8
       auto eth1
       allow-hotplug eth1
@@ -20,6 +19,5 @@
       iface eth2 inet dhcp
 
       iface eth2 inet6 auto
-
     state: present
   notify: "Restart Network Services"
