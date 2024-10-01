@@ -1,0 +1,23 @@
+- name: Configure Network Interfaces
+  blockinfile:
+    path: "/etc/network/interfaces"
+    block: |
+      # static settings: enp2s0
+      iface enp2s0 inet static
+      # IP address
+      address 192.168.4.88
+      # network address
+      network 192.168.4.0
+      # subnet mask
+      netmask 255.255.255.0
+      # broadcast address
+      broadcast 192.168.4.255
+      # default gateway
+      gateway 192.168.4.1
+      # name server
+      dns-nameservers 192.168.4.1
+
+      # inet6 via DHCP
+      iface enp2s0 inet dhcp
+    state: present
+  notify: "Restart Network Services"
