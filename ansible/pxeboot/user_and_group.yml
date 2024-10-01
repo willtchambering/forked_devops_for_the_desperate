@@ -3,27 +3,3 @@
     name: pxeboot
     shell: /bin/bash
     password: $6$W7kVHhCIJ2NJQr0H$vK8QsZungC2vVFiVy0BakJZyxGg2PLbqQxB7/tsRyIUVPeJKlaaDvQyGaE6TCdFaELeaAN/1ONwsRsyxDK3bV1
-# - name: Ensure group 'developers' exists
-#   group:
-#     name: developers
-#     state: present
-#
-# - name: Assign 'pxeboot' to the 'developers' group
-#   user:
-#     name: pxeboot
-#     groups: developers
-#     append: yes
-#
-# - name: Create a directory named 'engineering'
-#   file:
-#     path: /opt/engineering
-#     state: directory
-#     mode: 0750
-#     group: developers
-#
-# - name: Create a file in the engineering directory
-#   file:
-#     path: "/opt/engineering/private.txt"
-#     state: touch
-#     mode: 0770
-#     group: developers
