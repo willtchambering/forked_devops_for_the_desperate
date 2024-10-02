@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   #   'box' (debian/bookworm64) must be repackages with a small disk/partitions.
   # config.vm.disk :disk, size: '16GB', primary: true
   config.vm.box = "debian/bookworm64"
-  config.vm.hostname = "pxeboot"
+  config.vm.hostname = "pxeboot.totman.lan"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
