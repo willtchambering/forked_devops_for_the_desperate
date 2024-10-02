@@ -1,0 +1,4 @@
+NTP: 
+- /home/bill/Documents/repos/ansible/ntp
+- $REPOS/ansible/ntp
+
