@@ -1,0 +1,6 @@
+- name: remove nano
+  apt: name=nano state=absent
+- name: install vim
+  apt: name=vim state=present
+- name: remove vim.tiny
+  apt: name=vim-tiny state=absent
