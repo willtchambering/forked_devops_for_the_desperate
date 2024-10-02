@@ -2,3 +2,12 @@ NTP:
 - /home/bill/Documents/repos/ansible/ntp
 - $REPOS/ansible/ntp
 
+[ ] cd: should auto-detect and mount
+[ ] domain name: totman.lan
+[ ] login as root: yes (this allows login as root, substitute your own requirements)
+[ ] use non-free software: default of no
+[ ] use contrib software: default of no
+[ ] services to use: defaults: security updates only
+[ ] time zone: EST -> .profile seems like a good place for this... if at all
+[ ] UTC ASCII art for each interactive login - why not remind... me?
+
