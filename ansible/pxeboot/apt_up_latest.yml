@@ -1,4 +1,0 @@
-- name: Update packages to latest versions
-  ansible.builtin.apt:
-    name: "*"
-    state: latest

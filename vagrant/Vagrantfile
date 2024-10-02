@@ -15,6 +15,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://portal.cloud.hashicorp.com/vagrant/discover
+  # To be able to deploy with a smaller disk size, the underlyng 
+  #   'box' (debian/bookworm64) must be repackages with a small disk/partitions.
+  # config.vm.disk :disk, size: '16GB', primary: true
   config.vm.box = "debian/bookworm64"
   config.vm.hostname = "pxeboot"
 
@@ -62,6 +65,8 @@ Vagrant.configure("2") do |config|
     vb.name = "pxeboot"
     vb.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
     vb.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
+    vb.customize ["modifyvm", :id, "--audio", "none"]
+#    vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "0", "--device", "0", "--type", "dvddrive", "--medium", "/home/bill/Documents/learning/devops-for-the-desperate/pxe_boot_server/software/debian-12.7.0-amd64-netinst.iso"]
   end
 
   #
@@ -71,12 +76,13 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get upgrade -y
+  SHELL
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "../ansible/site.yml"
     ansible.compatibility_mode = "2.0"
   end
+  #config.vm.disk :dvd, name: "CDROM", file: "/home/bill/Documents/learning/devops-for-the-desperate/pxe_boot_server/software/debian-12.7.0-amd64-netinst.iso"
 end

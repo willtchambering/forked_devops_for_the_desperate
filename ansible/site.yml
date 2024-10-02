@@ -5,11 +5,11 @@
   become_method: sudo
   remote_user: pxeboot
   tasks:
-    - name: Update and upgrade apt packages
-      apt:
-        upgrade: yes
-        update_cache: yes
-        cache_valid_time: 86400
+    #    - name: Update and upgrade apt packages
+    #      apt:
+    #        upgrade: yes
+    #        update_cache: yes
+    #        cache_valid_time: 86400
     - import_tasks: pxeboot/user_and_group.yml
     - import_tasks: pxeboot/authorized_keys.yml
     - import_tasks: pxeboot/interfaces.yml
