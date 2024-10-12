@@ -4,8 +4,11 @@ My Progress:
 - [X] Chapter 1
 - [X] Chapter 2
 - [X] Chapter 3
-- [] Chapter 4
-- [] Chapter 5
+- [X] Chapter 4
+- [X] Chapter 5
+    - IP addresses:
+        10.0.2.15/24 fe80::d2:a9ff:fe00:7a16/64 
+        192.168.56.4/24 fe80::a00:27ff:fe1b:89bd/64
 - [] Chapter 6
 - [] Chapter 7
 - [] Chapter 8
