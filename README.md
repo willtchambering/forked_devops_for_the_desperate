@@ -1,5 +1,17 @@
 # DevOps For The Desperate
 
+My Progress:
+- [X] Chapter 1
+- [X] Chapter 2
+- [X] Chapter 3
+- [] Chapter 4
+- [] Chapter 5
+- [] Chapter 6
+- [] Chapter 7
+- [] Chapter 8
+- [] Chapter 9
+- [] Chapter 10
+
 ![dftd](book-cover.png "Book front cover")
 
 This repo is for the book [DevOps for the Desperate](https://nostarch.com/devops-desperate).

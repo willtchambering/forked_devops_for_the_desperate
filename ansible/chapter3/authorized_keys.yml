@@ -1,6 +1,8 @@
 - name: Set authorized key file from local user
   authorized_key:
-    user: bender 
+    user: bender
     state: present
+    # This pulls from the user running the provision and
+    #   copies it to the target of the provisioning
+    # TODO: Move this functionality into Vault
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/dftd.pub') }}"
-
