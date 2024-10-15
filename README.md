@@ -1,6 +1,7 @@
 # DevOps For The Desperate
 
 My Progress:
+Part I
 - [X] Chapter 1
 - [X] Chapter 2
 - [X] Chapter 3
@@ -9,9 +10,18 @@ My Progress:
     - IP addresses:
         10.0.2.15/24 fe80::d2:a9ff:fe00:7a16/64 
         192.168.56.4/24 fe80::a00:27ff:fe1b:89bd/64
+Part II
 - [] Chapter 6
+    - Minikube installation instructions:
+        https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fdebian+package
+        *As root:*
+        ```
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+        apt install ./minikube_latest_admd64.deb
+        ```
 - [] Chapter 7
 - [] Chapter 8
+Part III
 - [] Chapter 9
 - [] Chapter 10
 
