@@ -11,13 +11,48 @@ Part I
         10.0.2.15/24 fe80::d2:a9ff:fe00:7a16/64 
         192.168.56.4/24 fe80::a00:27ff:fe1b:89bd/64
 Part II
-- [] Chapter 6
+- [X] Chapter 6
     - Minikube installation instructions:
         https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fdebian+package
         *As root:*
         ```
-        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-        apt install ./minikube_latest_admd64.deb
+        # Go to https://github.com/kubernetes/minikube/releases/
+        #  find the version (such as the most recent) you want
+        #  download the .deb file, and install like so:
+        apt install ./minikube_<release/version.number>_amd64.deb
+        ```
+        # ```
+        # curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+        # apt install ./minikube_latest_admd64.deb
+        # ```
+    - Install Docker:
+        https://docs.docker.com/engine/install/debian/
+        *As root:*
+        ```
+        # Add Docker's official GPG key:
+        apt-get update
+        apt-get install ca-certificates curl
+        install -m 0755 -d /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+        chmod a+r /etc/apt/keyrings/docker.asc
+
+        # Add the repository to Apt sources:
+        echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+          $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+          sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        apt-get update
+
+        # Actually install the latest version:
+        apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        ```
+    - docker build warnings:
+        ```
+         3 warnings found (use docker --debug to expand):
+         - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 7)
+            - Literally 'as' -> 'AS' (it does have better readability)
+         - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 9)
+         - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 10)
         ```
 - [] Chapter 7
 - [] Chapter 8
