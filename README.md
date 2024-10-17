@@ -1,5 +1,8 @@
 # DevOps For The Desperate
 
+ECK:
+https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-eck.html
+
 My Progress:
 Part I
 - [X] Chapter 1
@@ -12,6 +15,11 @@ Part I
         192.168.56.4/24 fe80::a00:27ff:fe1b:89bd/64
 Part II
 - [X] Chapter 6
+    - Recover the Minikube/kubernetes environment from sudden shutdown:
+        ```
+        minikube start --drver=virtualbox
+        minikube kubectl -- get services
+        ```
     - Minikube installation instructions:
         https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fdebian+package
         *As root:*
