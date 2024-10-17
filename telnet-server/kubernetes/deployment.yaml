@@ -5,7 +5,7 @@ metadata:
   labels:
     app: telnet-server
 spec:
-  replicas: 8
+  replicas: 5
   selector:
     matchLabels:
       app: telnet-server
