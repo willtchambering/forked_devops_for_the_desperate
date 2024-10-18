@@ -15,7 +15,7 @@ Part I
         192.168.56.4/24 fe80::a00:27ff:fe1b:89bd/64
 Part II
 - [X] Chapter 6
-    - Recover the Minikube/kubernetes environment from sudden shutdown:
+    - recover the minikube/kubernetes environment from sudden shutdown:
         ```
         minikube start --drver=virtualbox
         minikube kubectl -- get services
@@ -62,8 +62,21 @@ Part II
          - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 9)
          - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 10)
         ```
-- [] Chapter 7
+- [X] Chapter 7
 - [] Chapter 8
+    - Install Skaffold:
+        - https://skaffold.dev/docs/install
+        ```
+        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+        install skaffold /usr/local/bin/
+        ```
+    - Install *container-structure-test*:
+        - https://github.com/GoogleContainerTools/container-structure-test
+        ```
+        curl -LO https://github.com/GoogleContainerTools/container-structure-test/releases/latest/download/container-structure-test-linux-amd64 && \
+        chmod +x container-structure-test-linux-amd64 && \
+        sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+        ```
 Part III
 - [] Chapter 9
 - [] Chapter 10
