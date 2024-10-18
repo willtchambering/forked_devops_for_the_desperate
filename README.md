@@ -19,6 +19,8 @@ Part II
         ```
         minikube start --drver=virtualbox
         minikube kubectl -- get services
+        # In its own terminal:
+        minikube tunnel
         ```
     - Minikube installation instructions:
         https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fdebian+package
@@ -65,10 +67,14 @@ Part II
 - [X] Chapter 7
 - [] Chapter 8
     - Install Skaffold:
-        - https://skaffold.dev/docs/install
+        - Google's instructions for installing their own product is wrong, there is no publically available 'release' branch.
+            GOOGLE SUCKS
+        - https://github.com/GoogleContainerTools/skaffold/releases/tag/v2.13.2
         ```
-        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
-        install skaffold /usr/local/bin/
+        # As root:
+        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/v2.13.2/skaffold-linux-amd64 && \
+        chmod +x skaffold && \
+        mv skaffold /usr/local/bin
         ```
     - Install *container-structure-test*:
         - https://github.com/GoogleContainerTools/container-structure-test
