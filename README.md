@@ -76,6 +76,16 @@ Part II
         chmod +x skaffold && \
         mv skaffold /usr/local/bin
         ```
+    - GOOGLE majorly sucks
+        The first Skaffold error was that the URL provided on: https://skaffold.dev/docs/install/ was returning an error (up until today)
+        skaffold was causing a reference error in docker by converting the "/" to an "_" in the image tag
+        ```
+        Generating tags...
+         - dftd/telnet-server -> ./dftd_telnet-server:0c778a6
+        ```
+        After changing the api version in the skaffold.yaml file, it gave me the correct URL for getting the latest release.
+          This gave an even worse error. So, I restored the api version, and the same error persisted.
+
     - Install *container-structure-test*:
         - https://github.com/GoogleContainerTools/container-structure-test
         ```
