@@ -65,7 +65,7 @@ Part II
          - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 10)
         ```
 - [X] Chapter 7
-- [] Chapter 8
+- [X] Chapter 8
     - Install Skaffold:
         - Google's instructions for installing their own product is wrong, there is no publically available 'release' branch.
             GOOGLE SUCKS
@@ -78,13 +78,21 @@ Part II
         ```
     - GOOGLE majorly sucks
         The first Skaffold error was that the URL provided on: https://skaffold.dev/docs/install/ was returning an error (up until today)
-        skaffold was causing a reference error in docker by converting the "/" to an "_" in the image tag
+
+        Then, it wanted to know where the default repo was (despite being in one). So, I used the `--default-repo .` option.
+
+        After that, Skaffold was causing a reference error in docker by converting the "/" to an "_" in the image tag
         ```
         Generating tags...
          - dftd/telnet-server -> ./dftd_telnet-server:0c778a6
         ```
+
         After changing the api version in the skaffold.yaml file, it gave me the correct URL for getting the latest release.
           This gave an even worse error. So, I restored the api version, and the same error persisted.
+
+        It finally worked when I went up a directory, ran `skaffold dev --cleanup=false`, received an error that included `skaffold init`, 
+           went back to my previous directory, and ran it again, where it finally worked. At this point, I went downstairs for a few hours
+           and the computer went to sleep. Once revived, the skaffold could not recognize changes in its directory.
 
     - Install *container-structure-test*:
         - https://github.com/GoogleContainerTools/container-structure-test
@@ -95,6 +103,7 @@ Part II
         ```
 Part III
 - [] Chapter 9
+    
 - [] Chapter 10
 
 ![dftd](book-cover.png "Book front cover")
