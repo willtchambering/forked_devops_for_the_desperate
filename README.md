@@ -109,7 +109,8 @@ Part III
         - Kibana
         - BBS Warrior
     ```
-
+    # cd $NETOPS/by_the_book/
+    kubectl apply -R -f monitoring/
     ```
 - [] Chapter 10
 
