@@ -103,7 +103,14 @@ Part II
         ```
 Part III
 - [] Chapter 9
-    
+    - Deploy the monitoring stack, consisting of:
+        - Prometheus
+        - Alertmanager
+        - Kibana
+        - BBS Warrior
+    ```
+
+    ```
 - [] Chapter 10
 
 ![dftd](book-cover.png "Book front cover")

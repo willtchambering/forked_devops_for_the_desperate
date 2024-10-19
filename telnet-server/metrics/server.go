@@ -48,22 +48,22 @@ func (m *MetricServer) ListenAndServeMetrics() {
 	http.ListenAndServe(m.port, nil)
 }
 
-// IncrementConnectionErrors += 1
+// Increment_Connection_Errors += 1
 func (m *MetricServer) IncrementConnectionErrors() {
 	connectionErrors.Inc()
 }
 
-//IncrementConnectionsProcessed += 1
+//Increment_Connections_Processed += 1
 func (m *MetricServer) IncrementConnectionsProcessed() {
 	connectionsProcessed.Inc()
 }
 
-// IncrementUnknownCommands += 1
+// Increment_Unknown_Commands += 1
 func (m *MetricServer) IncrementUnknownCommands(cmd string) {
 	unknownCommands.Inc()
 }
 
-//IncrementActiveConnections += 1
+//Increment_Active_Connections += 1
 func (m *MetricServer) IncrementActiveConnections() {
 	connectionsActive.Inc()
 }
